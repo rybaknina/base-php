@@ -16,7 +16,7 @@ if (isset($_POST['reg_name']) && isset($_POST['reg_username']) && isset($_POST['
     $regUser = new UserProvider($pdo);
     $userId =  $regUser->registerUser($user, $regPassword);
     if ($userId === null) {
-        $error = 'Ошибка регистрации пользователя';
+        $error = 'Ошибка регистрации пользователя: такой уже существует';
     } else {
         $user->setId($userId);
         $_SESSION['user'] = $user;

@@ -8,8 +8,14 @@ class UserProvider
     {
     }
 
-    public function registerUser(User $user, string $plainPassword)
+    public function registerUser(User $user, string $plainPassword): ?string
     {
+        $isUserExistStatement = $this->pdo->prepare('SELECT id FROM users WHERE username = :username');
+        $isUserExistStatement->execute(['username' => $user->getUsername()]);
+        if ($isUserExistStatement->fetch()) {
+            return null;
+        }
+
         $statement = $this->pdo->prepare(
             'INSERT INTO users (name, username, password) VALUES (:name, :username, :password)'
         );
