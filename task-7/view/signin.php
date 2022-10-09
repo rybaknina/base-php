@@ -33,10 +33,10 @@
             <div class="alert alert-danger <?=$error === null ? 'visually-hidden' : ''?>">
                 <?=$error?>
             </div>
-            <label for="username" class="visually-hidden">Имя пользователя</label>
-            <input type="text" id="username" name="username" class="form-control mt-3" placeholder="Имя пользователя" required="" autofocus="">
+            <label for="username" class="visually-hidden">Логин</label>
+            <input type="text" id="username" name="username" class="form-control mb-3" placeholder="Логин" required="" autofocus="">
             <label for="password" class="visually-hidden">Пароль</label>
-            <input type="password" id="password" name="password" class="form-control" placeholder="Пароль" required="">
+            <input type="password" id="password" name="password" class="form-control mb-3" placeholder="Пароль" required="">
             <button class="w-75 btn btn-lg btn-primary mt-1" type="submit">Войти</button>
             <div class="mt-3">
                 <a href="/">Назад</a>
