@@ -7,7 +7,8 @@ if (isset($_SESSION["user"])) {
 }
 ?>
 <?php if (is_null($username)): ?>
-    <a href="/?controller=security">Войти</a>
+    <a href="/?controller=registration">[Зарегистрироваться]</a>
+    <a href="/?controller=security">[Войти]</a>
 <?php else: ?>
     <p>Рады вас приветствовать, <?= $username ?>. <a href="/?controller=security&action=logout"">[Выход]</a></p>
 <?php endif ?><br>

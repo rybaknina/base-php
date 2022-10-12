@@ -8,15 +8,15 @@
 
 <?php include "menu.php" ?>
 
-<?=var_dump($_SESSION["tasks"])?>
 <form action="/?controller=tasks&action=add" method="post">
     <input type="text" name="task" placeholder="Описание задачи">
     <input type="submit" value="Добавить">
 </form>
 <?php foreach ($tasks as $key => $task): ?>
-    <div>
-        <?=$task->getDescription()?>
-        <a href="/?controller=tasks&action=done&key=<?=$key?>">[Done]</a><br>
+    <div id="<?= $task->getId() ?>">
+        <?= $task->getDescription() ?>
+        <a href="/?controller=tasks&action=done&key=<?= $task->getId() ?>">[Done]</a>
+        <br><br>
     </div>
 <?php endforeach; ?>
 
